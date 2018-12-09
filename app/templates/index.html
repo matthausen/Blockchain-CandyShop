@@ -1,0 +1,46 @@
+<!-- extend base layout -->
+{% extends "header.html" %}
+
+{% block content %}
+	<br>
+
+	<center>
+	<form action="/submit" id="textform" method="post">
+		<input type="text" name="payer" placeholder="Payer">
+		<br>
+		<input type="text" name="payee" placeholder="Payee">
+		<br>
+		<input type="text" name="amount" placeholder="Amount">
+		<br>
+	    <textarea name="re" rows="4" cols="50" placeholder="Reason of payment"></textarea>
+	    <br>
+	    <input class="btn btn-primary" type="submit" value="Post">
+	</form>
+	</center>
+
+	<br>
+
+	<a href="{{node_address}}/mine" target="_blank"><button class="btn btn-primary">Request to mine</button></a>
+	<a href="/"><button class="btn btn-primary">Resync</button></a>
+
+	<div style="margin: 20px;">
+
+    {% for post in posts %}
+    <div class="post_box">
+	   <div class="post_box-header">
+	      <div class="post_box-options"><button class="option-btn">Reply</button></div>
+	      <div style="background: rgb(0, 97, 146) none repeat scroll 0% 0%; box-shadow: rgb(0, 97, 146) 0px 0px 0px 2px;" class="post_box-avatar">{{post.payer[0]}}</div>
+	      <div class="name-header">{{post.payer}}</div>
+				<div class="name-header">{{post.payee}}</div>
+				<div class="name-header">{{post.amount}}</div>
+	      <div class="post_box-subtitle"> Posted at <i>{{readable_time(post.timestamp)}}</i></div>
+	   </div>
+	   <div>
+	      <div class="post_box-body">
+	         <p>{{post.re}}</p>
+	      </div>
+	   </div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
