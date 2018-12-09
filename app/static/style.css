@@ -1,6 +1,26 @@
 html, body {
   font-family: 'Gamja Flower', cursive;
+}
 
+.top{
+  background-image: url('assets/candy-rain.gif');
+}
+
+.client{
+  margin: 5%;
+}
+.buyer{
+  display: block;
+  width: 12rem;
+}
+.coin{
+  display: inline-block;
+  width: 40px;
+}
+
+#amount{
+  display: inline-block;
+  font-size: 30px;
 }
 
 .title{
