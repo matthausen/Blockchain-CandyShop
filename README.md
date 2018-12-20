@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 # Introduction
-
 
 A candy shop where transaction are stored in a blockchain. The app is built in Flask (python framework).
 
