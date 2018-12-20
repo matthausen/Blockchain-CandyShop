@@ -14,6 +14,11 @@
 		<br>
 		<input type="text" name="amount" placeholder="Amount">
 		<br>
+		<select id='options' name='option'>
+			{% for client in clients %}
+				<option value='{client}'>{{client}}</option>
+			{% endfor %}
+			</select>
 	    <textarea name="re" rows="4" cols="50" placeholder="Reason of payment"></textarea>
 	    <br>
 	    <input class="btn btn-primary" type="submit" value="Post">
