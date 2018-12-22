@@ -6,6 +6,17 @@ from flask import render_template, redirect, request
 
 from app import app
 
+# Define value of Candycoin
+cc = 0.25 # 1CandyCoin can buy 4 candies
+
+
+#Define client class
+class Client:
+    def __init__(self, name, balance, credit):
+        self.name = name
+        self.balance = balance
+        self.credit = credit
+
 # The node with which our application interacts, there can be multiple
 # such nodes as well.
 CONNECTED_NODE_ADDRESS = "http://127.0.0.1:8000"
@@ -68,3 +79,6 @@ def submit_textarea():
 
 def timestamp_to_string(epoch_time):
     return datetime.datetime.fromtimestamp(epoch_time).strftime('%H:%M')
+
+# Accept payment and add/subtract amount from client balance
+def accept_payment():
