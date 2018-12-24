@@ -9,13 +9,13 @@
 	<center>
 	<form action="/submit" id="textform" method="post">
 		<select>
-			{% for client in client %}
+			{% for client in clients %}
 				<option id="client" value="{{client}}">{{client}}</option>
 			{% endfor %}
 		</select>
 		<input type="text" name="payer" placeholder="Payer">
 		<br>
-		{% for client in client %}
+		{% for client in clients %}
 			<option id="client" value="{{client}}">{{client}}</option>
 		{% endfor %}
 		<input type="text" name="payee" placeholder="Payee">
@@ -23,11 +23,6 @@
 		<input type="text" name="amount" placeholder="Amount">
 		<br>
 		<!-- Display available amount based om credit-->
-		<select>
-			{% if(availale) %}
-				<option id="credit" value="credit"></option>
-			{% endfor %}
-		</select>
 	    <textarea name="re" rows="4" cols="50" placeholder="Reason of payment"></textarea>
 	    <br>
 	    <input class="btn btn-primary" type="submit" value="Post">
