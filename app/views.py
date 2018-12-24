@@ -50,12 +50,14 @@ def fetch_posts():
 
 @app.route('/')
 def index():
+    clients = ['Uter', 'Milhouse', 'Homer', 'WInchester']
     fetch_posts()
     return render_template('index.html',
                            title='Blockchain Candy Shop',
                            posts=posts,
                            node_address=CONNECTED_NODE_ADDRESS,
-                           readable_time=timestamp_to_string)
+                           readable_time=timestamp_to_string,
+                           clients=clients)
 
 
 @app.route('/submit', methods=['POST'])
