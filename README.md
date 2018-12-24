@@ -8,7 +8,8 @@ This app was built in Flask (a python framework).
 ## How to run
 
 Clone the project,
-=======
+
+
 # Blockchain Candy Shop
 
 You can buy candies with virtual coins. All transaction are saved in the blockchain.
