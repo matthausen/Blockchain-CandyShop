@@ -6,21 +6,68 @@ html, body {
   background-image: url('assets/candy-rain.gif');
 }
 
+.form{
+  width: 80%;
+  margin: 0 auto;
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 50px;
+}
+
+select{
+  margin: 10px;
+}
+textarea{
+  margin: 20px
+}
+label{
+  font-size: 20px;
+}
+
+.cryptocoin{
+  width: 5%;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 0 auto;
+}
+.shop{
+  display: block;
+  margin: 5%;
+  width: 20%;
+  margin: 0 auto;
+}
+
 .client{
   margin: 5%;
 }
-.buyer{
+.client-single{
   display: block;
-  width: 12rem;
+  width: 10rem;
 }
 .coin{
   display: inline-block;
   width: 40px;
 }
 
-#amount{
+.shop-single{
+  display: block;
+  width: 20rem;
+}
+
+#client-amount, #shop-amount{
   display: inline-block;
   font-size: 30px;
+}
+
+.mine{
+  width: 30%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .title{

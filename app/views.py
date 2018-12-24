@@ -10,7 +10,7 @@ from app import app
 cc = 0.25 # 1CandyCoin can buy 4 candies
 
 
-#Define client class
+#Define client and shop class
 class Client:
     def __init__(self, name, balance, credit):
         self.name = name
@@ -22,6 +22,7 @@ class Shop:
         self.name = name
         self.balance = balance
         self.credit = credit
+
 
 # The node with which our application interacts, there can be multiple
 # such nodes as well.
@@ -47,17 +48,35 @@ def fetch_posts():
         posts = sorted(content, key=lambda k: k['timestamp'],
                        reverse=True)
 
+# Define client object and create a list of clients
+clients = []
+
+uter = Client(name="Uter", balance=100, credit=0)
+milhouse = Client(name="Milhouse", balance=65, credit=0)
+homer = Client(name="Homer", balance=230, credit=0)
+winchester = Client(name="Winchester", balance=340, credit=0)
+shop = Shop(name="Candy Shop", balance=3000, credit=5000)
+
+clients.append(uter)
+clients.append(milhouse)
+clients.append(homer)
+clients.append(winchester)
+clients.append(shop)
+
+def add_clients():
+
+    return clients
 
 @app.route('/')
 def index():
-    clients = ['Uter', 'Milhouse', 'Homer', 'WInchester']
     fetch_posts()
+    add_clients()
     return render_template('index.html',
                            title='Blockchain Candy Shop',
                            posts=posts,
                            node_address=CONNECTED_NODE_ADDRESS,
                            readable_time=timestamp_to_string,
-                           clients=clients)
+                           clients=clients,)
 
 
 @app.route('/submit', methods=['POST'])

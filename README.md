@@ -1,7 +1,7 @@
 # Introduction
 
 A simple example of a candy shop which uses Blockchain to store its transactions.
-Paymentsare done via "candycoins".
+Payments are done via "candycoins".
 The Blockchain keeps record of client name (payer), the receiver (payee), amount of candycoins (balance), amount of candies(credit) and timestamp.
 This app was built in Flask (a python framework).
 
@@ -17,7 +17,6 @@ This app was created using Flask (python framework).
 ## Instructions to run
 
 Clone the project
->>>>>>> 6dcad35dfcd4b4cb8fe534c6e02af1a148c15d92
 
 Start a blockchain node server,
 

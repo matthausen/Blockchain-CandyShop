@@ -6,33 +6,44 @@
 {% include "shop.html" %}
 	<br>
 
-	<center>
-	<form action="/submit" id="textform" method="post">
-		<select>
-			{% for client in clients %}
-				<option id="client" value="{{client}}">{{client}}</option>
-			{% endfor %}
-		</select>
-		<input type="text" name="payer" placeholder="Payer">
-		<br>
-		{% for client in clients %}
-			<option id="client" value="{{client}}">{{client}}</option>
-		{% endfor %}
-		<input type="text" name="payee" placeholder="Payee">
-		<br>
-		<input type="text" name="amount" placeholder="Amount">
-		<br>
-		<!-- Display available amount based om credit-->
-	    <textarea name="re" rows="4" cols="50" placeholder="Reason of payment"></textarea>
-	    <br>
-	    <input class="btn btn-primary" type="submit" value="Post">
-	</form>
-	</center>
+	<div class="form">
+		<center>
+		<form action="/submit" id="textform" method="post">
+			<label for="payer">Payer</label>
+			<select id="z" name="payer">
+				{% for client in clients %}
+					<option id="client" value="{{client.name}}">{{client.name}}</option>
+				{% endfor %}
+			</select>
+			<!-- <input type="text" name="payer" placeholder="Payer"> -->
+			<br>
+			<label for="payee">Payee</label>
+			<select name="payee">
+				{% for client in clients %}
+					<option id="client" value="{{client.name}}">{{client.name}}</option>
+				{% endfor %}
+			</select>
+			<!-- <input type="text" name="payee" placeholder="Payee"> -->
+			<br>
+			<label for="amount">Amount</label>
+			<input type="text" name="amount" placeholder="Amount">
+			<br>
+			<label for="reason">Reason of payment:</label>
+		    <textarea name="re" rows="4" cols="50" placeholder="Type something here..."></textarea>
+		    <br>
+		    <input class="btn btn-primary" type="submit" value="Post">
+		</form>
+		</center>
 
-	<br>
+		<br>
 
-	<a href="{{node_address}}/mine" target="_blank"><button class="btn btn-primary">Request to mine</button></a>
-	<a href="/"><button class="btn btn-primary">Resync</button></a>
+		<div class="mine">
+			<a href="{{node_address}}/mine" target="_blank"><button class="btn btn-primary">Request to mine</button></a>
+			<a href="/"><button class="btn btn-primary">Resync</button></a>
+		</div>
+	</div>
+
+	<!-- Display transactions in blocks -->
 
 	<div style="margin: 20px;">
 
